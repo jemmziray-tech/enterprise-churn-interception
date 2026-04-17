@@ -36,8 +36,11 @@ To replicate this pipeline locally, ensure your environment is configured for GP
 ```bash
 # Clone the repository
 git clone [https://github.com/jemmziray-tech/enterprise-churn-interception.git](https://github.com/jemmziray-tech/enterprise-churn-interception.git)
-
+```
 # Install strictly defined dependencies
+```bash
 pip install -r requirements.txt
-
+```
 # Note: Ensure local NVIDIA drivers are optimized for CUDA acceleration to utilize the XGBoost GPU tree method.
+
+Engineered by John Elifuraha Mziray — BSc Artificial Intelligence & Machine Learning, University of Limerick.
