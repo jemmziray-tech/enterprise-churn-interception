@@ -3,12 +3,12 @@
 
 > **Objective:** Bridging the gap between raw mathematical accuracy and real-world business retention strategy. 
 
-## ⚡ The Executive Summary
+## ⬢ Executive Summary
 Customer churn costs enterprise telecommunications companies millions annually. Standard machine learning models often optimize for global *accuracy*, completely missing the minority class (the actual churning customers). 
 
 This project discards the baseline approach. By implementing synthetic data generation (SMOTE), hardware-accelerated ensemble learning (XGBoost via CUDA), and strategic probability threshold calibration, this pipeline successfully intercepts **96% of churning customers**—translating predictive analytics into direct revenue retention.
 
-## 🏗️ Technical Architecture
+## ⬢ Technical Architecture
 This is a full-stack, end-to-end data pipeline optimized for a local NVIDIA GPU environment:
 
 1. **Data Ingestion & Formatting:** - Handled hidden data corruption (e.g., coerced whitespace errors in continuous numerical columns) and enforced strict `float64` and `Int64` typing.
@@ -22,7 +22,7 @@ This is a full-stack, end-to-end data pipeline optimized for a local NVIDIA GPU 
    - Bypassed CPU bottlenecks by routing the XGBoost `hist` tree method directly to a dedicated NVIDIA GPU (`device='cuda'`). 
    - Deployed `GridSearchCV` with 3-fold cross-validation to isolate the optimal hyperparameter architecture (Max Depth: 3, Learning Rate: 0.01) specifically targeting the `Recall` metric.
 
-## 📈 The Business Value (Results)
+## ⬢ Business Value & Impact
 A model is only as valuable as the money it saves. By aggressively lowering the prediction threshold from the default `0.50` to a customized `0.35`, the model was tuned to reflect the reality of B2C marketing: sending a $10 retention discount to a false positive is infinitely cheaper than losing a $1,000 customer entirely.
 
 | Metric | Baseline Model (Logistic Regression) | Tuned Architecture (XGBoost + SMOTE) | Business Impact |
@@ -30,12 +30,12 @@ A model is only as valuable as the money it saves. By aggressively lowering the 
 | **Recall (Churn)** | 60% | **96%** | **Intercepts nearly 100% of flight-risk accounts.** |
 | **Precision (Churn)** | 68% | **38%** | Widens the net. Accepts controlled false alarms to guarantee maximum retention. |
 
-## ⚙️ Local Deployment
+## ⬢ Local Deployment
 To replicate this pipeline locally, ensure your environment is configured for GPU acceleration. 
 
 ```bash
 # Clone the repository
-git clone [https://github.com/yourusername/telecom-churn-prediction.git](https://github.com/yourusername/telecom-churn-prediction.git)
+git clone [https://github.com/jemmziray-tech/enterprise-churn-interception.git](https://github.com/jemmziray-tech/enterprise-churn-interception.git)
 
 # Install strictly defined dependencies
 pip install -r requirements.txt
